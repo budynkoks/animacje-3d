@@ -4,10 +4,12 @@ import os
 
 
 def wyczysc_scene():
+    # Usuwa wszystkie obiekty ze sceny, by startować od zera
     bpy.ops.object.select_all(action='SELECT')
     bpy.ops.object.delete()
 
 def stworz_material_lodygi():
+    # Ciemny, lekko metaliczny materiał dla łodygi
     mat = bpy.data.materials.new(name="Mat_Lodyga")
     mat.use_nodes = True
     bsdf = mat.node_tree.nodes.get("Principled BSDF")
@@ -18,6 +20,7 @@ def stworz_material_lodygi():
     return mat
 
 def stworz_material_liscia():
+    # Zielony materiał z lekką emisją dla liści
     mat = bpy.data.materials.new(name="Mat_Lisc")
     mat.use_nodes = True
     bsdf = mat.node_tree.nodes.get("Principled BSDF")
@@ -45,6 +48,7 @@ def stworz_lodyge(pos_x, pos_y, wysokosc, material):
     return lodyga
 
 def stworz_liscie(pos_x, pos_y, wysokosc, liczba_lisci, promien_lisci, material):
+    # Rozmieszczenie liści równomiernie po okręgu wokół łodygi
     odleglosc_od_srodka = 0.3
     
     for i in range(liczba_lisci):
@@ -60,6 +64,7 @@ def stworz_liscie(pos_x, pos_y, wysokosc, liczba_lisci, promien_lisci, material)
         
         lisc.scale = (promien_lisci , promien_lisci * 0.3, 0.05)
         
+        # Stałe pochylenie liścia i obrót wokół osi Z wg kąta
         lisc.rotation_euler = (0, math.radians(30), kat)
         
         lisc.data.materials.append(material)
