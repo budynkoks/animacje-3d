@@ -1,3 +1,5 @@
+<img width="800" height="600" alt="rosliny_lab04" src="https://github.com/user-attachments/assets/2ea4e365-9811-414f-a769-038c62d93ab0" />
+
 #  Lab 04 – Proceduralne generowanie roślin biomechanicznych (bpy)
 
 W ramach tego zadania stworzyłem skrypt w języku Python wykorzystujący API Blendera (`bpy`) do proceduralnego generowania trójwymiarowych modeli w stylu biomechanicznym. Zamiast ręcznego modelowania w interfejsie graficznym, cała geometria, materiały i ustawienia sceny tworzone są w 100% z poziomu kodu.
@@ -31,6 +33,4 @@ Uruchomienie w tle (bez włączania interfejsu). Zakładając, że Blender jest 
 
 ```bash
 blender -b --python skrypt.py
-
-<img width="800" height="600" alt="rosliny_lab04" src="https://github.com/user-attachments/assets/2ea4e365-9811-414f-a769-038c62d93ab0" />
 
